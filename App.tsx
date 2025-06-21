@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import debounce from 'lodash.debounce';
 import Header from './components/Header';
 import { ResumeData } from './types';
-import { Analytics } from "@vercel/analytics/next"
 
 const Hero = lazy(() => import('./components/Hero'));
 const About = lazy(() => import('./components/About'));
