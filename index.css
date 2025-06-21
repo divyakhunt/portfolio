@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar (optional) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Optional smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional custom spin speed */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+theme: {
+  extend: {
+    animation: {
+      'spin-slow': 'spin 4s linear infinite',
+    },
+  },
+}
+body {
+  @apply bg-background-deep text-text-light;
+}
+@layer utilities {
+  .animate-blink {
+    animation: blink 1.2s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+@keyframes ping-once {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-ping-once {
+  animation: ping-once 0.6s ease-in-out 1;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+.animate-typing {
+  width: 0;
+  animation: typing 2s steps(10, end), blink 0.75s step-end infinite;
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+.glow-text {
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.08),
+    0 0 14px rgba(0, 153, 255, 0.18),
+    0 0 28px rgba(0, 153, 255, 0.12);
+}

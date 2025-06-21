@@ -1,0 +1,28 @@
+{
+  "name": "divya-khunt-portfolio-1",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.18.1",
+    "lodash.debounce": "^4.0.8",
+    "lottie-react": "^2.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}

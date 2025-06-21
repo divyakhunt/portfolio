@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divya Khunt - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Optional: if you want to toggle dark mode
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['Space Grotesk', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            animation: {
+              'spin-slower': 'spin 2s linear infinite',
+              'pulse-once': 'pulse 1s ease-in-out 1',
+            },
+            keyframes: {
+              pulse: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '.5' },
+              },
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#3B82F6',
+                light: '#60A5FA',
+                dark: '#2563EB',
+                darker: '#1E3A8A',
+                hover: '#8B5CF6'  // 🔵 Deep navy blue, great for backgrounds
+              },
+              
+              secondary: { // Vibrant Teal/Green
+                DEFAULT: '#10B981', 
+                light: '#34D399',
+                dark: '#059669',
+              },
+              accent: { // Main accent - Pink
+                DEFAULT: '#EC4899', 
+                light: '#F472B6',
+                dark: '#DB2777',
+              },
+              'accent-secondary': { // New accent for timeline, different highlights - e.g., a vibrant Purple
+                DEFAULT: '#8B5CF6', // Purple
+                light: '#A78BFA',
+                dark: '#7C3AED',
+              },
+              neutral: {
+                50: '#F9FAFB',  // Lightest
+                100: '#F3F4F6',
+                200: '#E5E7EB',
+                300: '#D1D5DB',
+                400: '#9CA3AF',
+                500: '#6B7280',
+                600: '#4B5563', 
+                700: '#374151', 
+                800: '#1F2937', 
+                900: '#111827', 
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.18.1",
+    "react-icons/": "https://esm.sh/react-icons@^5.5.0/",
+    "emailjs-com": "https://esm.sh/@emailjs/browser@^4.3.3",
+    "lottie-react": "https://esm.sh/lottie-react@^2.4.0"
+  }
+}
+</script>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111827; /* neutral-900 */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #374151; /* neutral-700 */
+    border-radius: 5px;
+    border: 2px solid #111827; /* neutral-900 - gives a nice padding effect */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4B5563; /* neutral-600 */
+  }
+  
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-neutral-900 text-neutral-200 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
