@@ -1,31 +1,41 @@
-# 💼 Divya Khunt - Developer Portfolio
+<h1 align="center">🌐 Divya Khunt – Developer Portfolio</h1>
 
-Welcome to my personal portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**, designed to showcase my projects, skills, and resume in a sleek and responsive dark-themed UI.
-
-🌐 **Live Site**: [divyakhunt-portfolio.vercel.app](https://divyakhunt-portfolio.vercel.app)
+<p align="center">
+  <b>A modern, high-performance portfolio website built using React, TypeScript, Tailwind CSS, and Framer Motion.</b><br/>
+  <a href="https://divyakhunt-portfolio.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/Live-Demo-4ade80?style=flat-square&logo=vercel&logoColor=black" /></a>
+  <img src="https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3.0-38bdf8?style=flat-square&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-4.9-3178c6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-⚡️-9466ff?style=flat-square&logo=vite&logoColor=white" />
+</p>
 
 ---
 
-## 🚀 Features
+## 🔗 Live Demo
+
+▶️ **Visit here:** [https://divyakhunt-portfolio.vercel.app](https://divyakhunt-portfolio.vercel.app)
+
+---
+
+## ✨ Features
 
 - ⚛️ Built with React + TypeScript
-- 🎨 Styled with Tailwind CSS
-- 🕹️ Animations via Framer Motion & Lottie (Hero section)
-- 🔀 Smooth scroll & hash-based section linking
-- 🧠 Lazy loading with `React.lazy` + `Suspense`
-- 🎯 Scroll-aware navigation with `IntersectionObserver`
-- 📄 Resume download directly from the site
-- 📱 Fully responsive and mobile-friendly
-- 📦 Blazing fast bundling via Vite
+- 💨 Tailwind CSS for utility-first styling
+- 🎥 Smooth scroll-based animations with Framer Motion
+- 🔀 Section-based hash navigation
+- 🧠 Lazy loading with React.lazy and Suspense
+- 👀 Scroll tracking using IntersectionObserver + debounce
+- 📄 Resume download link
+- 📱 Fully responsive design
 - 🌍 Deployed on Vercel
 
 ---
 
-## 📁 Folder Structure
+## 🗂️ Project Structure
 
 ```bash
 .
-├── components/                  # All React sections and UI components
+├── components/               # All React UI components & sections
 │   ├── About.tsx
 │   ├── Contact.tsx
 │   ├── FilterControls.tsx
@@ -39,18 +49,18 @@ Welcome to my personal portfolio website built with **React**, **TypeScript**, a
 │   └── Skills.tsx
 │
 ├── public/
-│   ├── assets/                 # Images, logos, Lottie files
-│   └── Divya_Khunt_Resume.pdf # Resume download
+│   ├── assets/              # Static files (images/icons)
+│   └── Divya_Khunt_Resume.pdf
 │
-├── .env.local                  # Environment variables
-├── .gitignore
-├── App.tsx                     # App wrapper with lazy loading
-├── index.css                   # Tailwind and base styles
-├── index.html                  # Vite entry HTML
-├── index.tsx                   # React root render
-├── metadata.json              # Resume/project metadata
+├── App.tsx                  # App layout with lazy-loaded sections
+├── index.tsx                # Main entry point
+├── index.css                # Tailwind + custom CSS
+├── index.html
+├── metadata.json            # Structured resume/project metadata
+├── types.ts                 # TypeScript type definitions
+├── vite.config.ts           # Vite bundler configuration
 ├── package.json
-├── package-lock.json
 ├── tsconfig.json
-├── types.ts                   # TypeScript interfaces
-└── vite.config.ts             # Vite config
+├── .env.local
+├── .gitignore
+└── README.md
