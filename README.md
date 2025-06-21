@@ -1,66 +1,142 @@
-<h1 align="center">🌐 Divya Khunt – Developer Portfolio</h1>
+# 💼 Divya Khunt – Developer Portfolio
 
-<p align="center">
-  <b>A modern, high-performance portfolio website built using React, TypeScript, Tailwind CSS, and Framer Motion.</b><br/>
-  <a href="https://divyakhunt-portfolio.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/Live-Demo-4ade80?style=flat-square&logo=vercel&logoColor=black" /></a>
-  <img src="https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react" />
-  <img src="https://img.shields.io/badge/TailwindCSS-3.0-38bdf8?style=flat-square&logo=tailwind-css&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-4.9-3178c6?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-⚡️-9466ff?style=flat-square&logo=vite&logoColor=white" />
-</p>
+A ⚡ blazing-fast, 🖤 dark-themed developer portfolio built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.  
+Showcasing my featured projects, technical skills, and downloadable resume in a visually engaging way.
 
----
-
-## 🔗 Live Demo
-
-▶️ **Visit here:** [https://divyakhunt-portfolio.vercel.app](https://divyakhunt-portfolio.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-4ade80?style=flat-square&logo=vercel&logoColor=black)](https://divyakhunt-portfolio.vercel.app)
+![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8?style=flat-square&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178c6?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-⚡️-9466ff?style=flat-square&logo=vite&logoColor=white)
 
 ---
 
-## ✨ Features
+## 🌍 Live Demo
 
-- ⚛️ Built with React + TypeScript
-- 💨 Tailwind CSS for utility-first styling
-- 🎥 Smooth scroll-based animations with Framer Motion
-- 🔀 Section-based hash navigation
-- 🧠 Lazy loading with React.lazy and Suspense
-- 👀 Scroll tracking using IntersectionObserver + debounce
+🔗 **See it live at:**  
+👉 [https://divyakhunt-portfolio.vercel.app](https://divyakhunt-portfolio.vercel.app)
+
+---
+
+## ✨ Key Highlights
+
+- ⚛️ **React + TypeScript** architecture
+- 🎨 **Tailwind CSS** for utility-first styling
+- 🎞️ **Framer Motion** animations
+- 🔗 Hash-based smooth scroll navigation
+- 🧠 Lazy-loaded sections with `React.lazy` & `Suspense`
+- 👀 Scroll detection with `IntersectionObserver` + debounce
 - 📄 Resume download link
-- 📱 Fully responsive design
-- 🌍 Deployed on Vercel
+- 📱 Fully responsive & mobile-first design
+- 🚀 Instant deployment on **Vercel**
 
 ---
 
-## 🗂️ Project Structure
+## 📁 Folder Structure
 
-```bash
+```
 .
-├── components/               # All React UI components & sections
-│   ├── About.tsx
-│   ├── Contact.tsx
-│   ├── FilterControls.tsx
-│   ├── Header.tsx
+├── components/               # All modular UI sections
 │   ├── Hero.tsx
-│   ├── IconComponents.tsx
-│   ├── layout.tsx
-│   ├── ProjectCard.tsx
+│   ├── About.tsx
+│   ├── Skills.tsx
 │   ├── Projects.tsx
+│   ├── Contact.tsx
+│   ├── Header.tsx
+│   ├── ProjectCard.tsx
 │   ├── ProjectVisuals.tsx
-│   └── Skills.tsx
+│   ├── FilterControls.tsx
+│   ├── IconComponents.tsx
+│   └── layout.tsx
 │
 ├── public/
-│   ├── assets/              # Static files (images/icons)
+│   ├── assets/              # Static media files
 │   └── Divya_Khunt_Resume.pdf
 │
-├── App.tsx                  # App layout with lazy-loaded sections
-├── index.tsx                # Main entry point
-├── index.css                # Tailwind + custom CSS
-├── index.html
-├── metadata.json            # Structured resume/project metadata
-├── types.ts                 # TypeScript type definitions
-├── vite.config.ts           # Vite bundler configuration
-├── package.json
+├── App.tsx                  # App wrapper with lazy loading
+├── index.tsx                # Main render entry
+├── index.css                # Global styles (Tailwind)
+├── index.html               # Template HTML
+├── metadata.json            # Portfolio/project data
+├── types.ts                 # TypeScript types
+├── vite.config.ts           # Vite config
 ├── tsconfig.json
+├── package.json
 ├── .env.local
 ├── .gitignore
 └── README.md
+```
+
+---
+
+## 🛠️ Getting Started
+
+### ⚙️ Requirements
+
+- ✅ Node.js (v16+)
+- ✅ npm or yarn
+
+### 📦 Install & Run
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+🔓 Then open: `http://localhost:5173`
+
+---
+
+## 🚢 Deployment
+
+The site is auto-deployed on **Vercel**.
+
+🔧 **Vercel Settings**:
+- Framework Preset: `Vite`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+Just push to `main` and it’s live! 🎉
+
+---
+
+## 📄 Resume
+
+📥 [Download Resume](https://divyakhunt-portfolio.vercel.app/Divya_Khunt_Resume.pdf)
+
+---
+
+## 👩‍💻 About Me
+
+Hi, I'm **DIVYA KHUNT** — a passionate **Machine Learning Engineer** with strong foundations in **deep learning**, **computer vision**, **natural language processing**, and **audio signal processing**.
+
+I specialize in building scalable, intelligent systems using **Python**, **TensorFlow**, and research-driven best practices. My work focuses on applying data-driven innovation to create AI solutions that are not only technically robust but also ethical and impactful.
+
+I'm deeply curious, highly collaborative, and thrive in dynamic learning environments. From developing real-time emotion recognition systems to designing AI models that enhance accessibility, I aim to contribute to projects that drive meaningful change through AI.
+
+---
+
+## 👤 Author
+
+**Divya Khunt**  
+🎓 Machine Learning Engineer | 💡 AI Enthusiast | 🧠 Deep Learning Explorer
+
+- 🌐 **Portfolio**: [divyakhunt-portfolio.vercel.app](https://divyakhunt-portfolio.vercel.app)
+- 🐙 **GitHub**: [github.com/divyakhunt](https://github.com/divyakhunt)
+- 💼 **LinkedIn**: [linkedin.com/in/divya-khunt-142a61273](https://www.linkedin.com/in/divya-khunt-142a61273/)
+- 📬 **Email**: [divyakhunt3325@gmail.com](mailto:divyakhunt3325@gmail.com)
+
+---
+
+## ⚖️ License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 💡 Feedback & Contributions
+
+Have ideas or feedback?  
+Feel free to open an issue or pull request — contributions are always welcome! 🙌
