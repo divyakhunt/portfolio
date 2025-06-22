@@ -79,6 +79,11 @@ const About: React.FC<AboutProps> = ({ summaryParagraphs, onContactClick }) => {
           <a
             href="/Divya_Khunt_Resume.pdf"
             download
+            onClick={() => {
+              if (window.umami) {
+                window.umami.track('download-resume');
+              }
+            }}
             className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white
               font-semibold rounded-lg text-base sm:text-lg shadow-md hover:shadow-primary/50
               transition-all duration-200 transform hover:-translate-y-0.5"
