@@ -50,7 +50,6 @@ Showcasing my featured projects, technical skills, and downloadable resume in a 
 │   └── layout.tsx
 │
 ├── public/
-│   ├── assets/              # Static media files
 │   └── Divya_Khunt_Resume.pdf
 │
 ├── App.tsx                  # App wrapper with lazy loading
