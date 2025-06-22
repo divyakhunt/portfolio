@@ -77,23 +77,23 @@ const About: React.FC<AboutProps> = ({ summaryParagraphs, onContactClick }) => {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-  href="/Divya_Khunt_Resume.pdf"
-  download="Divya_Khunt_Resume.pdf"
-  onClick={() => {
-    if (window.umami) {
-      window.umami.track('download-resume');
-    }
-  }}
-  className="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white 
-             font-semibold rounded-lg text-base md:text-lg shadow-md hover:shadow-primary/40
-             transition-all duration-150 ease-out transform"
-  whileHover={{ scale: 1.05, y: -2, transition: { type: 'spring', stiffness: 300, duration: 0.15 } }}
-  whileTap={{ scale: 0.97 }}
-  data-interactive="true"
-  aria-label="Download my Resume"
->
-  <FaDownload className="w-4 h-4 md:w-5 md:h-5" /> Download Resume
-</motion.a>
+            href="/Divya_Khunt_Resume.pdf"
+            download="Divya_Khunt_Resume.pdf"
+            onClick={() => {
+              if (window.umami) {
+                window.umami.track('download-resume');
+              }
+            }}
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white 
+                      font-semibold rounded-lg text-base md:text-lg shadow-md hover:shadow-primary/40
+                      transition-all duration-150 ease-out transform"
+            whileHover={{ scale: 1.05, y: -2, transition: { type: 'spring', stiffness: 300, duration: 0.15 } }}
+            whileTap={{ scale: 0.97 }}
+            data-interactive="true"
+            aria-label="Download my Resume"
+          >
+            <FaDownload className="w-4 h-4 md:w-5 md:h-5" /> Download Resume
+          </motion.a>
 
 
           <motion.a
