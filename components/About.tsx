@@ -76,35 +76,40 @@ const About: React.FC<AboutProps> = ({ summaryParagraphs, onContactClick }) => {
           custom={summaryParagraphs.length + 1}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="/Divya_Khunt_Resume.pdf"
-            download
-            onClick={() => {
-              if (window.umami) {
-                window.umami.track('download-resume');
-              }
-            }}
-            className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white
-              font-semibold rounded-lg text-base sm:text-lg shadow-md hover:shadow-primary/50
-              transition-all duration-200 transform hover:-translate-y-0.5"
-            data-interactive="true"
-          >
-            <FaDownload className="w-5 h-5" />
-            Download Resume
-          </a>
+          <motion.a
+  href="/Divya_Khunt_Resume.pdf"
+  download="Divya_Khunt_Resume.pdf"
+  onClick={() => {
+    if (window.umami) {
+      window.umami.track('download-resume');
+    }
+  }}
+  className="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white 
+             font-semibold rounded-lg text-base md:text-lg shadow-md hover:shadow-primary/40
+             transition-all duration-150 ease-out transform"
+  whileHover={{ scale: 1.05, y: -2, transition: { type: 'spring', stiffness: 300, duration: 0.15 } }}
+  whileTap={{ scale: 0.97 }}
+  data-interactive="true"
+  aria-label="Download my Resume"
+>
+  <FaDownload className="w-4 h-4 md:w-5 md:h-5" /> Download Resume
+</motion.a>
 
-          <a
-            href="#contact"
-            onClick={(e) => onContactClick(e, 'contact')}
-            className="flex items-center gap-2 px-6 py-3 border-2 border-accent-secondary 
-              text-accent-secondary hover:bg-accent-secondary hover:text-white
-              font-semibold rounded-lg text-base sm:text-lg shadow-md hover:shadow-accent-secondary/40
-              transition-all duration-200 transform hover:-translate-y-0.5"
-            data-interactive="true"
-          >
-            <FaEnvelope className="w-5 h-5" />
-            Contact Me
-          </a>
+
+          <motion.a
+              href="#contact"
+              onClick={(e) => onContactClick(e, 'contact')}
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent border-2 border-accent-secondary 
+                         text-accent-secondary hover:bg-accent-secondary hover:text-white 
+                         font-semibold rounded-lg text-base md:text-lg shadow-md hover:shadow-accent-secondary/30
+                         transition-all duration-150 ease-out transform"
+              whileHover={{ scale: 1.05, y: -2, transition: { type: 'spring', stiffness: 300, duration: 0.15 } }}
+              whileTap={{ scale: 0.97 }}
+              data-interactive="true"
+              aria-label="Contact Me"
+            >
+              <FaEnvelope className="w-4 h-4 md:w-5 md:h-5" /> Contact Me
+            </motion.a>
         </motion.div>
       </div>
     </section>
