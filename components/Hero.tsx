@@ -40,6 +40,9 @@ const Hero: React.FC<HeroProps> = ({ firstName, lastName, tagline, onContactClic
 
   const handleWishClick = () => {
     setConfettiKey((prev) => prev + 1); // force remount Confetti
+    if (window.umami) {
+    window.umami.track('wish-dhruv-clicked');
+  }
   };
 
   return (
