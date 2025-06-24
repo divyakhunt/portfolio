@@ -87,3 +87,24 @@ body {
     0 0 14px rgba(0, 153, 255, 0.18),
     0 0 28px rgba(0, 153, 255, 0.12);
 }
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  25% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(250%);
+  }
+  75% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+  will-change: transform;
+}
