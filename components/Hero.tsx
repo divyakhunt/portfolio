@@ -3,6 +3,7 @@ import { motion, Variants } from 'framer-motion';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
 
+
 interface HeroProps {
   firstName: string;
   lastName: string;
