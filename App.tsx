@@ -74,7 +74,7 @@ const resumeData: ResumeData = {
       ],
       shortDescription: "Flask app predicting next words in real-time using a Bi-LSTM model. Deployed on Render.",
       repoUrl: "https://github.com/divyakhunt/next_word_pred-webapp",
-      liveDemoUrl: "https://next-word-predictor-rmby.onrender.com/",
+      liveDemoUrl: "https://divyakhunt-next-word-predictor.hf.space/",
       categories: ['ML', 'Web', 'NLP'],
       imageIdentifier: "next_word",
     },
