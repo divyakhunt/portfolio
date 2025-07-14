@@ -10,6 +10,27 @@ interface ProjectCardProps {
   index: number;
 }
 
+const buttonVariants: Variants = {
+  rest: { scale: 1, y: 0 },
+  hover: { scale: 1.05, y: -1, transition: { duration: 0.05 } },
+  tap: { scale: 0.95, y: 1, transition: { duration: 0.08 } },
+};
+
+const iconVariants: Variants = {
+  rest: { rotate: 0, scale: 1 },
+  hover: {
+    rotate: -20,
+    scale: 1.25,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 6,
+      mass: 0.6,
+      duration: 0.2 
+    }
+  },
+};
+
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.96 },
   visible: (i: number) => ({
@@ -100,14 +121,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                variants={buttonVariants}
+                initial="rest"
+                whileHover="hover"
+                whileTap="tap"
                 className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-md 
-                           bg-neutral-700 hover:bg-neutral-600 text-neutral-200 hover:text-white
-                           transition duration-150 shadow-sm hover:shadow-md"
-                whileHover={{ scale: 1.05, y: -1 }}
-                whileTap={{ scale: 0.95 }}
+                          bg-neutral-700 hover:bg-neutral-600 text-neutral-200 hover:text-white
+                          transition duration-150 shadow-sm hover:shadow-md"
                 aria-label={`GitHub Repo: ${project.title}`}
               >
-                <GitHubIcon className="w-4 h-4" /> GitHub
+                <motion.span
+                  variants={iconVariants}
+                  className="flex items-center justify-center"
+                >
+                  <GitHubIcon className="w-4 h-4 text-neutral-300" />
+                </motion.span>
+
+                GitHub
               </motion.a>
             )}
             {project.liveDemoUrl && (
@@ -116,7 +146,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium
-                          text-neutral-200 bg-[#1e1e1e] border border-[#3d3d3d] overflow-hidden
+                          text-neutral-200 bg-[#111827] border border-[#3d3d3d] overflow-hidden
                           rounded-md transition-all duration-300 group"
                 whileHover={{ 
                   scale: 1.06, 
