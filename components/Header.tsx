@@ -50,10 +50,29 @@ const Header: React.FC<HeaderProps> = ({ isScrolled, activeSection, onNavLinkCli
   ];
 
   const socialLinks = [
-    { href: contactInfo.github, label: "GitHub", Icon: FaGithub, target: "_blank" },
-    { href: contactInfo.linkedin, label: "LinkedIn", Icon: FaLinkedin, target: "_blank" },
-    { href: `mailto:${contactInfo.email}`, label: "Email", Icon: FaEnvelope, target: "_self" },
-  ];
+  { 
+    href: contactInfo.github, 
+    label: "GitHub", 
+    Icon: FaGithub, 
+    target: "_blank",
+    hoverColor: "#6e5494"  // GitHub dark gray
+  },
+  { 
+    href: contactInfo.linkedin, 
+    label: "LinkedIn", 
+    Icon: FaLinkedin, 
+    target: "_blank",
+    hoverColor: "#0A66C2" // LinkedIn blue
+  },
+  { 
+    href: `mailto:${contactInfo.email}`, 
+    label: "Email", 
+    Icon: FaEnvelope, 
+    target: "_self",
+    hoverColor: "#EA4335" // Gmail red
+  },
+];
+
 
   return (
     <motion.header
@@ -125,7 +144,12 @@ const Header: React.FC<HeaderProps> = ({ isScrolled, activeSection, onNavLinkCli
                 aria-label={social.label}
                 className="text-neutral-300 hover:text-accent-light transition-colors duration-150"
                 variants={socialIconItemVariants}
-                whileHover={{ y: -2, scale: 1.1, color: '#F472B6', transition: { duration: 0.1 } }} // Scale to 1.1 for icons, faster transition
+                whileHover={{ 
+                  y: -2, 
+                  scale: 1.1, 
+                  color: social.hoverColor, 
+                  transition: { duration: 0.1 } 
+                }}
                 whileTap={{ scale: 0.9 }}
                 data-interactive="true"
               >

@@ -45,7 +45,7 @@ const resumeData: ResumeData = {
         "Balanced class distribution with data augmentation and trained on RAVDESS, TESS, CREMA-D, and SAVEE datasets.",
         "Optimized with early stopping, ReduceLROnPlateau, and batch normalization to prevent overfitting."
       ],
-      shortDescription: "CNN-BiLSTM model identifying emotions from speech using audio features. Trained on diverse datasets.",
+      shortDescription: "CNN-BiLSTM model identifying emotions from speech using audio features. Trained on RAVDESS, TESS, CREMA-D & SAVEE datasets.",
       repoUrl: "https://github.com/divyakhunt/speech_emotion_recognition",
       categories: ['ML', 'Audio'],
       imageIdentifier: "speech_emotion",
@@ -72,7 +72,7 @@ const resumeData: ResumeData = {
         "Enabled keyboard interaction for fast word insertion by pressing Tab; deployed the app live using Render.",
         "Optimized model and code for real-time inference with low latency."
       ],
-      shortDescription: "Flask app predicting next words in real-time using a Bi-LSTM model. Deployed on Hugging Face.",
+      shortDescription: "Flask app predicting next words in real-time using a Bi-LSTM model. Trained on The Adventures of Sherlock Holmes. Deployed on Hugging Face.",
       repoUrl: "https://github.com/divyakhunt/next_word_pred-webapp",
       liveDemoUrl: "https://divyakhunt-next-word-predictor.hf.space/",
       categories: ['ML', 'Web', 'NLP'],
@@ -80,7 +80,7 @@ const resumeData: ResumeData = {
     },
     {
       title: "Image Captioning",
-      technologies: ["TensorFlow", "Keras", "DenseNet201", "LSTM", "Flickr8k"],
+      technologies: ["TensorFlow", "Keras", "OpenCV",  "DenseNet201", "LSTM"],
       description: [
         "Generated image descriptions using DenseNet201 as encoder and LSTM as decoder.",
         "Preprocessed captions, extracted features, and trained on Flickr8k with 5 captions per image.",

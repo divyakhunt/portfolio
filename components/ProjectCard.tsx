@@ -115,15 +115,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.liveDemoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-md
-                           bg-accent-secondary/90 hover:bg-accent-secondary text-white 
-                           transition duration-150 shadow-sm hover:shadow-md"
-                whileHover={{ scale: 1.05, y: -1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label={`Live Demo: ${project.title}`}
+                className="relative inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium
+                          text-neutral-200 bg-[#1e1e1e] border border-[#3d3d3d] overflow-hidden
+                          rounded-md transition-all duration-300 group"
+                whileHover={{ 
+                  scale: 1.06, 
+                  y: -1, 
+                  transition: { duration: 0.08, ease: 'easeOut' } 
+                }}
+
+                whileTap={{
+                  scale: 0.95,
+                  y: 1,
+                  transition: { duration: 0.05, ease: 'linear' }
+                }}
+
               >
-                <ExternalLinkIcon className="w-4 h-4" /> Live Demo
+                {/* Sliding background layer */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#d4d4d4] to-[#e2e8f0]
+                 translate-x-full group-hover:translate-x-0 transition-transform duration-300
+                 z-0" />
+                <ExternalLinkIcon className="w-4 h-4 text-neutral-200 z-10 group-hover:text-[#1f2937]" />
+                <span className="z-10 group-hover:text-[#1f2937]">Live WebApp</span>
               </motion.a>
+
             )}
           </div>
         </div>
