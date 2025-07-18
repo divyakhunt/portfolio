@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import {
   FaPython, FaJava, FaHtml5, FaCss3Alt, FaJsSquare, FaGitAlt,
-  FaBolt, FaChartBar, FaChartPie, FaFileAlt, FaMusic, FaFileAudio,
+  FaBolt, FaCuttlefish, FaChartBar, FaChartPie, FaFileAlt, FaMusic, FaFileAudio,
   FaWaveSquare, FaVolumeUp, FaCommentDots, FaHandSparkles, FaCog,
   FaChevronDown,
 } from 'react-icons/fa';
 import {
-  SiScikitlearn, SiTensorflow, SiKeras, SiPytorch, SiOpencv, SiPandas,
+  SiC, SiCplusplus, SiScikitlearn, SiTensorflow, SiKeras, SiPytorch, SiOpencv, SiPandas,
   SiNumpy, SiStreamlit, SiFlask, SiJupyter, SiGooglecolab, SiKaggle,
   SiMysql, SiSpacy,
 } from 'react-icons/si';
@@ -16,12 +16,13 @@ import {
 const ICON_SIZE = 'w-10 h-10 md:w-11 md:h-11';
 const skills = [
   { name: 'Python', icon: <FaPython className={`${ICON_SIZE} text-blue-400`} /> },
+  { name: 'C', icon: <FaCuttlefish className={`${ICON_SIZE} text-blue-500`} /> },
+  { name: 'C++', icon: <SiCplusplus className={`${ICON_SIZE} text-blue-600`} /> },
   { name: 'Java', icon: <FaJava className={`${ICON_SIZE} text-orange-400`} /> },
   { name: 'HTML', icon: <FaHtml5 className={`${ICON_SIZE} text-orange-500`} /> },
   { name: 'CSS', icon: <FaCss3Alt className={`${ICON_SIZE} text-blue-500`} /> },
   { name: 'JavaScript', icon: <FaJsSquare className={`${ICON_SIZE} text-yellow-400`} /> },
   { name: 'Scikit-learn', icon: <SiScikitlearn className={`${ICON_SIZE} text-sky-500`} /> },
-  { name: 'LightGBM', icon: <FaBolt className={`${ICON_SIZE} text-yellow-500`} /> },
   { name: 'NumPy', icon: <SiNumpy className={`${ICON_SIZE} text-sky-600`} /> },
   { name: 'Pandas', icon: <SiPandas className={`${ICON_SIZE} text-purple-400`} /> },
   { name: 'Matplotlib', icon: <FaChartBar className={`${ICON_SIZE} text-red-400`} /> },
@@ -43,7 +44,6 @@ const skills = [
   { name: 'Git', icon: <FaGitAlt className={`${ICON_SIZE} text-orange-600`} /> },
   { name: 'Streamlit', icon: <SiStreamlit className={`${ICON_SIZE} text-red-400`} /> },
   { name: 'Flask', icon: <SiFlask className={`${ICON_SIZE} text-neutral-300`} /> },
-  { name: 'MySQL', icon: <SiMysql className={`${ICON_SIZE} text-blue-300`} /> },
   { name: 'Kaggle', icon: <SiKaggle className={`${ICON_SIZE} text-sky-400`} /> },
 ];
 
