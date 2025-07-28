@@ -30,6 +30,22 @@ export const GetProjectVisual: React.FC<ProjectVisualProps> = ({ imageIdentifier
 
   // The component now returns the icon directly. The container is handled by ProjectCard.
   switch (identifiedKey) {
+    case "Ecomly":
+  return (
+    <div className="flex items-center justify-center" aria-label={`Visual for ${title}`}>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        className={iconClassName}
+      >
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    </div>
+  );
+
     case "speech_emotion":
       return <FaWaveSquare className={iconClassName} aria-label={`Visual for ${title}: Speech/Audio`} />;
     case "sign_language":

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, Variants, AnimatePresence } from 'framer-motion';
 import { ProjectItem } from '../types';
 import { GitHubIcon, ExternalLinkIcon } from './IconComponents';
 import { GetProjectVisual } from './ProjectVisuals';
@@ -46,6 +46,13 @@ const cardVariants: Variants = {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+  const [isTechExpanded, setIsTechExpanded] = useState(false);
+
+  const MAX_INITIAL_TECHS = 4;
+  const initialTechs = project.technologies.slice(0, MAX_INITIAL_TECHS);
+  const extraTechs = project.technologies.slice(MAX_INITIAL_TECHS);
+  const hasMoreTechs = extraTechs.length > 0;
+
   return (
     <motion.div
       custom={index}
@@ -53,11 +60,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={cardVariants}
-      whileHover={{
-        scale: 1.01,
-        y: -2,
-        transition: { duration: 0.2 },
-      }}
+      layout // This animates the card's size change smoothly
+      transition={{ layout: { duration: 0.3, ease: 'easeOut' } }}
       role="article"
       aria-labelledby={`project-title-${project.title.replace(/\s+/g, '-')}`}
       className="w-full"
@@ -92,27 +96,63 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
           {/* Tech Stack */}
           <div>
-            <div className="flex items-center text-xs text-neutral-400 mb-1">
+            <div className="flex items-center text-xs text-neutral-400 mb-2">
               <FaTag className="mr-2 text-neutral-500" />
               <span className="font-medium">Tech Stack</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.slice(0, 5).map((tech, techIndex) => (
-                <motion.span
-                  key={techIndex}
-                  className="bg-secondary/80 hover:bg-secondary text-white px-2 py-0.5 text-[11px] rounded-md shadow transition-all duration-150"
-                  whileHover={{ scale: 1.05 }}
+            <div className="flex flex-wrap gap-2 items-center">
+              {/* Statically rendered initial technologies */}
+              {initialTechs.map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-secondary/80 hover:bg-secondary text-white px-2 py-0.5 text-[11px] rounded-md shadow transition-colors duration-150"
                 >
                   {tech}
-                </motion.span>
-              ))}
-              {project.technologies.length > 5 && (
-                <span className="bg-neutral-600 text-neutral-300 px-2 py-0.5 text-xs rounded-md shadow">
-                  +{project.technologies.length - 5} more
                 </span>
+              ))}
+
+              {/* Animated extra technologies */}
+              <AnimatePresence>
+                {isTechExpanded &&
+                  extraTechs.map((tech, index) => (
+                    <motion.span
+                      key={tech}
+                      layout
+                      initial={{ opacity: 0, x: -15, scale: 0.8 }}
+                      animate={{
+                        opacity: 1,
+                        x: 0,
+                        scale: 1,
+                        transition: { delay: index * 0.05, type: 'spring', stiffness: 300, damping: 20 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        x: 15,
+                        scale: 0.8,
+                        transition: { delay: (extraTechs.length - 1 - index) * 0.04, duration: 0.15 },
+                      }}
+                      className="bg-secondary/80 hover:bg-secondary text-white px-2 py-0.5 text-[11px] rounded-md shadow transition-colors duration-150 origin-center"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+              </AnimatePresence>
+
+              {hasMoreTechs && (
+                <motion.button
+                  onClick={() => setIsTechExpanded(!isTechExpanded)}
+                  className="bg-neutral-600 hover:bg-neutral-500 text-neutral-300 px-2 py-0.5 text-xs rounded-md shadow transition-colors duration-150 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-expanded={isTechExpanded}
+                  aria-label={isTechExpanded ? 'Show fewer technologies' : 'Show all technologies'}
+                >
+                  {isTechExpanded ? 'Show less' : `+${extraTechs.length} more`}
+                </motion.button>
               )}
             </div>
           </div>
+
 
           {/* Links */}
           <div className="flex items-center flex-wrap gap-3 pt-2 border-t border-neutral-700/60 mt-auto">

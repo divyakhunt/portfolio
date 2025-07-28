@@ -105,6 +105,23 @@ const resumeData: ResumeData = {
       repoUrl: "https://github.com/divyakhunt/facial_emotion_recognition",
       categories: ['ML', 'Vision'],
       imageIdentifier: "facial_emotion",
+    },
+    {
+      title: "Ecomly.ai",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Firebase", "EmailJS", "Gemini API", "remove.bg API"],
+      description: [
+        "Developed a modern React web app offering a suite of AI tools tailored for e-commerce sellers.",
+        "Integrated tools like background remover, image generator, product summarizer, shipping label cropper, and OTP verification.",
+        "Used Firebase for authentication, Firestore for data storage, and EmailJS for sending OTPs during registration.",
+        "Enabled smooth navigation with Framer Motion animations and responsive design using Tailwind CSS.",
+        "Implemented Pixian API for high-quality background removal and advanced image processing.",
+        "Built a smart AI chatbot to assist users with product-related queries using natural language."
+      ],
+      shortDescription: "React-based AI toolset for e-commerce sellers featuring background removal, label cropping, image generation, product summarization, AI chatbot, and brand maker. Live on Vercel",
+      repoUrl: "https://github.com/divyakhunt/Ecomly.ai",
+      liveDemoUrl: "https://ecomly.vercel.app",
+      categories: ['Web'],
+      imageIdentifier: "Ecomly",
     }
   ]
 };
