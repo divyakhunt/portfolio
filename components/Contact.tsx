@@ -40,9 +40,9 @@ const contactIconItemVariants: Variants = {
 };
 
 const ContactComponent: React.FC<ContactProps> = ({ contactInfo }) => {
-  const EMAILJS_SERVICE_ID = 'service_qwxanz3';
-  const EMAILJS_TEMPLATE_ID = 'template_ph8nytr';
-  const EMAILJS_PUBLIC_KEY = 'c3uJ_VpzeInuHqLlP';
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSending, setIsSending] = useState(false);
