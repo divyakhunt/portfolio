@@ -45,7 +45,6 @@ export const GetProjectVisual: React.FC<ProjectVisualProps> = ({ imageIdentifier
       </svg>
     </div>
   );
-
     case "speech_emotion":
       return <FaWaveSquare className={iconClassName} aria-label={`Visual for ${title}: Speech/Audio`} />;
     case "sign_language":
