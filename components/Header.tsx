@@ -134,15 +134,12 @@ const Header: React.FC<HeaderProps> = ({ isScrolled, activeSection, onNavLinkCli
             className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 z-10"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0, transition: { delay: 0.5, duration: 0.4 } }}
-            whileHover={{ 
-                color: '#60A5FA', 
-                scale: 1.03,
-                textShadow: '0 0 10px rgba(96, 165, 250, 0.7)'
-            }}
+            whileHover={{ color: '#60A5FA' }} // only color change on hover
             whileTap={{ scale: 0.98 }}
           >
             Divya Khunt
           </motion.a>
+
 
           {/* Center: Desktop Nav with Render Animation */}
           <motion.nav 
