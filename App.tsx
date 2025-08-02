@@ -287,7 +287,6 @@ const App: React.FC = () => {
           <div id="about" className="scroll-mt-24">
             <About
               name={resumeData.name}
-              educationInstitution={resumeData.education[0].institution}
               summaryParagraphs={[
                 `Hi, I'm <highlight>DIVYA KHUNT</highlight> — a passionate <highlight>Machine Learning Engineer</highlight> with strong foundations in <highlight>deep learning</highlight>, <highlight>computer vision</highlight>, <highlight>natural language processing</highlight>, and <highlight>audio signal processing</highlight>.`,
                 `I specialize in building scalable, intelligent systems using <highlight>Python</highlight>, <highlight>TensorFlow</highlight>, and research-driven best practices. My work revolves around applying data-driven innovation to develop AI solutions that are not just technically sound but also <highlight>ethical</highlight> and <highlight>impactful</highlight>.`,

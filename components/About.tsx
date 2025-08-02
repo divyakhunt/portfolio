@@ -2,6 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload, FaEnvelope } from 'react-icons/fa';
 
+// Add a declaration for the umami object on the Window interface
+declare global {
+  interface Window {
+    umami?: {
+      track: (eventName: string, eventData?: any) => void;
+    };
+  }
+}
 interface AboutProps {
   name: string;
   summaryParagraphs: string[];
@@ -26,7 +34,7 @@ const parseAndHighlightText = (text: string) => {
   );
 };
 
-// Entry animation
+// Entry animation - Removed explicit Variants type to let TS infer it
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
