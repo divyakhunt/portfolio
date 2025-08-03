@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import debounce from 'lodash.debounce';
 import Header from './components/Header';
 import { ResumeData } from './types';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Hero = lazy(() => import('./components/Hero'));
 const About = lazy(() => import('./components/About'));
@@ -133,6 +134,13 @@ const App: React.FC = () => {
 
   const nameParts = useMemo(() => resumeData.name.split(" "), [resumeData.name]);
   const heroTagline = "I’m a ML/DL Engineer turning complex data into intelligent, real-world systems.";
+
+  const socialLinks = useMemo(() => [
+    { href: resumeData.contact.github, label: "GitHub", Icon: FaGithub, target: "_blank", hoverColor: "#A78BFA" },
+    { href: resumeData.contact.linkedin, label: "LinkedIn", Icon: FaLinkedin, target: "_blank", hoverColor: "#60A5FA" },
+    { href: `mailto:${resumeData.contact.email}`, label: "Email", Icon: FaEnvelope, target: "_self", hoverColor: "#F472B6" },
+  ], [resumeData.contact]);
+
 
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
@@ -319,14 +327,37 @@ const App: React.FC = () => {
       </Suspense>
 
       <motion.footer
-        className="text-center py-10 text-neutral-400 text-sm bg-neutral-800 border-t border-neutral-700 mt-16"
+        className="bg-neutral-900 mt-20 relative"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8 }}
       >
-        <p>© {new Date().getFullYear()} {resumeData.name}. All rights reserved.</p>
-        <p className="mt-1">Crafted with React, Tailwind CSS & Framer Motion.</p>
+        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="flex items-center justify-center">
+                <div className="text-center">
+                    <motion.p
+                        className="text-sm text-neutral-400"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                        viewport={{ once: true }}
+                    >
+                        © {new Date().getFullYear()} {resumeData.name}. All rights reserved.
+                    </motion.p>
+                    <motion.p
+                        className="text-xs text-neutral-500 mt-1"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.5 }}
+                        viewport={{ once: true }}
+                    >
+                        Crafted with React, Tailwind CSS & Framer Motion.
+                    </motion.p>
+                </div>
+            </div>
+        </div>
       </motion.footer>
     </div>
   );
