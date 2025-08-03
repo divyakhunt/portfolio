@@ -3,6 +3,7 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { ContactInfo } from '../types';
 import { EmailIcon, LinkedInIcon, GitHubIcon, ExternalLinkIcon } from './IconComponents';
 import { FaPaperPlane, FaSpinner, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 interface ContactProps {
   contactInfo: ContactInfo;
@@ -85,37 +86,47 @@ const ContactComponent: React.FC<ContactProps> = ({ contactInfo }) => {
     return Object.keys(errors).length === 0;
   };
 
-  const sendEmail = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Math.random() > 0.15) {
-          resolve('Success');
-        } else {
-          reject(new Error('Simulated network failure.'));
-        }
-      }, 1500);
-    });
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (isSending || sendStatus) return;
+    if (isSending || sendStatus === 'success') return;
     if (!validateForm()) return;
 
     setIsSending(true);
     setSendStatus(null);
     setFormErrors({});
 
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      console.error("EmailJS environment variables not set.");
+      setSendStatus('error');
+      setFormErrors({ general: 'Email service is not configured.' });
+      setIsSending(false);
+      setTimeout(() => setSendStatus(null), 5000);
+      return;
+    }
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
     try {
-      await sendEmail();
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
       setSendStatus('success');
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
+      console.error('Failed to send email:', err);
       setSendStatus('error');
       setFormErrors({ general: 'Failed to send. Please try again.' });
     } finally {
       setIsSending(false);
-      setTimeout(() => setSendStatus(null), 4000);
+      setTimeout(() => {
+        setSendStatus(null);
+      }, 5000);
     }
   };
   
