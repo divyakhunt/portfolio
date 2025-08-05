@@ -127,7 +127,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled, activeSection, onNavLinkCli
           transition={{ duration: 0.3 }}
         />
 
-        <div className="container mx-auto flex items-center justify-between px-4 w-full relative">
+        <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12 w-full relative">
           <motion.a
             href="#home"
             onClick={(e) => onNavLinkClick(e, 'home')}
