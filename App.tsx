@@ -353,7 +353,7 @@ const App: React.FC = () => {
                         transition={{ delay: 0.3, duration: 0.5 }}
                         viewport={{ once: true }}
                     >
-                        Crafted with React, Tailwind CSS & Framer Motion.
+                        {/* can be used later for more info */}
                     </motion.p>
                 </div>
             </div>
