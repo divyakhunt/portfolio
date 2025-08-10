@@ -39,16 +39,17 @@ const resumeData: ResumeData = {
   ],
   projects: [
     {
-      title: "Speech Emotion Recognition",
-      technologies: ["TensorFlow", "Keras", "Librosa", "CNN-BiLSTM"],
+      title: "Speech Emotion Recognition Web App",
+      technologies: ["TensorFlow", "Keras", "Librosa", "CNN-BiLSTM", "Gradio", "SoundFile"],
       description: [
         "Designed a CNN-BiLSTM model for speech emotion recognition using MFCC, Chroma, ZCR, and RMS features.",
         "Balanced class distribution with data augmentation and trained on RAVDESS, TESS, CREMA-D, and SAVEE datasets.",
         "Optimized with early stopping, ReduceLROnPlateau, and batch normalization to prevent overfitting."
       ],
-      shortDescription: "CNN-BiLSTM model identifying emotions from speech using audio features. Trained on RAVDESS, TESS, CREMA-D & SAVEE datasets.",
-      repoUrl: "https://github.com/divyakhunt/speech_emotion_recognition",
-      categories: ['ML', 'Audio'],
+      shortDescription: "A CNN-BiLSTM model that uses audio features to detect emotions from speech, trained on RAVDESS, TESS, CREMA-D, and SAVEE datasets, and deployed as a Gradio-powered web app on Hugging Face for real-time predictions.",
+      repoUrl: "https://github.com/divyakhunt/speech_emotion_recognition_webapp",
+      liveDemoUrl: "https://divyakhunt-speech-emotion-recognition.hf.space/",
+      categories: ['ML', 'Audio', 'Web'],
       imageIdentifier: "speech_emotion",
     },
     {
