@@ -252,40 +252,40 @@ const App: React.FC = () => {
 
       {/* Suspense fallback for loading state  */}
       <Suspense
-        // fallback={
-        //   <motion.div
-        //     className="fixed inset-0 z-50 flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_#1a1a40_0%,_#0e0e30_40%,_#000000_100%)] backdrop-blur-xl before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(255,255,255,0.03)_1%,_transparent_40%)] before:opacity-40 before:animate-pulse"
-        //     initial={{ opacity: 1 }}
-        //     animate={{ opacity: 1 }}
-        //     exit={{ opacity: 0 }}
-        //     transition={{ duration: 1 }}
-        //   >
+        fallback={
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_#1a1a40_0%,_#0e0e30_40%,_#000000_100%)] backdrop-blur-xl before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(255,255,255,0.03)_1%,_transparent_40%)] before:opacity-40 before:animate-pulse"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
 
-        //     <div className="flex flex-col items-center space-y-10">
-        //       {/* Enhanced 3D-like glowing ring */}
-        //       <div className="relative w-20 h-20">
-        //         {/* Outer glowing pulse ring */}
-        //         <div className="absolute inset-0 rounded-full border-4 border-blue-500/30 animate-ping" />
+            <div className="flex flex-col items-center space-y-10">
+              {/* Enhanced 3D-like glowing ring */}
+              <div className="relative w-20 h-20">
+                {/* Outer glowing pulse ring */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-500/30 animate-ping" />
 
-        //         {/* Rotating dual-border ring */}
-        //         <div className="absolute inset-0 rounded-full border-4 border-blue-400/70 border-t-transparent animate-spin [animation-duration:1.2s]" />
+                {/* Rotating dual-border ring */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-400/70 border-t-transparent animate-spin [animation-duration:1.2s]" />
 
-        //         {/* Inner glow center (glass effect) */}
-        //         <div className="absolute inset-3 rounded-full bg-gradient-to-br from-blue-600/30 to-blue-300/20 backdrop-blur-md shadow-inner shadow-blue-500/20" />
-        //       </div>
+                {/* Inner glow center (glass effect) */}
+                <div className="absolute inset-3 rounded-full bg-gradient-to-br from-blue-600/30 to-blue-300/20 backdrop-blur-md shadow-inner shadow-blue-500/20" />
+              </div>
 
-        //       {/* Pulse-glow animated text */}
-        //       <motion.p
-        //         className="text-xl font-light tracking-wide text-neutral-300 animate-pulse glow-text"
-        //         initial={{ opacity: 0, y: 12 }}
-        //         animate={{ opacity: 1, y: 0 }}
-        //         transition={{ delay: 0.5, duration: 0.8 }}
-        //       >
-        //         Crafting your experience...
-        //       </motion.p>
-        //     </div>
-        //   </motion.div>
-        // }
+              {/* Pulse-glow animated text */}
+              <motion.p
+                className="text-xl font-light tracking-wide text-neutral-300 animate-pulse glow-text"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
+                Crafting your experience...
+              </motion.p>
+            </div>
+          </motion.div>
+        }
 
 >
         <section id="home">
