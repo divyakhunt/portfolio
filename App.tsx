@@ -250,6 +250,7 @@ const App: React.FC = () => {
         contactInfo={resumeData.contact}
       />
 
+      {/* Suspense fallback for loading state  */}
       <Suspense
         fallback={
           <motion.div
