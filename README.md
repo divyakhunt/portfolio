@@ -14,7 +14,7 @@ Showcasing my featured projects, technical skills, and downloadable resume in a 
 ## 🌍 Live Demo
 
 🔗 **See it live at:**  
-👉 [https://divyakhunt-portfolio.vercel.app](https://divyakhunt-portfolio.vercel.app)
+👉 [https://divyakhunt.me](https://divyakhunt.me)
 
 ---
 
